@@ -1,0 +1,12 @@
+/* folha de estilos */
+
+p {
+	font-family: Verdana;
+	font-size: 14px;
+	color: #777;
+}
+
+h1, h2 {
+	font-family: Arial;
+	color: #06c;
+}
