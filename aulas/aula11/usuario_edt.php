@@ -41,8 +41,8 @@ else
 		}
 		else
 		{
-			//header('location:perfil.php?msg=errorUpdate');
-			echo mysqli_error($conn);
+			header('location:perfil.php?msg=errorUpdate');
+			//echo mysqli_error($conn);
 		}
 	}
 }
