@@ -12,7 +12,7 @@ else
 
 	include 'conn.php';
 
-	$sql = "SELECT usuario, senha FROM tb_usuarios 
+	$sql = "SELECT usuario, senha, email FROM tb_usuarios 
 	WHERE (usuario LIKE '$usuario' OR email LIKE '$usuario') 
 	AND senha LIKE '$senha'";
 
@@ -25,6 +25,7 @@ else
 		session_start();
 		$_SESSION['usuario'] = $login['usuario'];
 		$_SESSION['senha']   = $login['senha'];
+		$_SESSION['email']   = $login['email'];
 
 		header('location:perfil.php');
 	}
