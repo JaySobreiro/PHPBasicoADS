@@ -24,6 +24,10 @@
 		{
 			echo '<h4 class="alert alert-danger">Erro: Não foi possível alterar seus dados.</h4>';
 		}
+		else if($msg == 'edtInvalid')
+		{
+			echo '<h4 class="alert alert-danger">Erro: nome de usuário ou e-mail já em uso.</h4>';
+		}
 	}
 
 
@@ -63,7 +67,7 @@
 		<div class="collapse" id="collapseExample">
 	  		<div class="card card-body">
 	    		<div class="form-group">
-		    		<form name="editar_user" action="user_edt.php" method="post">
+		    		<form name="editar_user" action="usuario_edt.php" method="post">
 		    			
 		    			<p>
 		    				<label>Usuário:</label><br>
