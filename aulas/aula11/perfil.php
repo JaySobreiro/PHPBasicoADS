@@ -10,7 +10,24 @@
 </head>
 <body class="container">
 
-	<?php include 'menu.php'; ?>
+	<?php include 'menu.php'; 
+
+	if(!empty($_GET['msg']))
+	{
+		$msg = $_GET['msg'];
+
+		if($msg == 'userUpdated')
+		{
+			echo '<h4 class="alert alert-success">Dados alterados com sucesso</h4>';
+		}
+		else if($msg == 'errorUpdate')
+		{
+			echo '<h4 class="alert alert-danger">Erro: Não foi possível alterar seus dados.</h4>';
+		}
+	}
+
+
+	?>
 
 	<h2>Meu Perfil - <span class="text-info">Bem vindo, <?php echo $_SESSION['usuario']; ?></span></h2>
 
@@ -45,30 +62,30 @@
 
 		<div class="collapse" id="collapseExample">
 	  		<div class="card card-body">
-	    
-	    		<form name="editar_user" action="user_edt.php" method="post">
-	    			
-	    			<p>
-	    				<label>Usuário:</label><br>
-	    				<input type="text" name="usuario" value="<?php echo $usuario; ?>">
-	    			</p>
+	    		<div class="form-group">
+		    		<form name="editar_user" action="user_edt.php" method="post">
+		    			
+		    			<p>
+		    				<label>Usuário:</label><br>
+		    				<input type="text" name="usuario" value="<?php echo $usuario; ?>" class="form-control">
+		    			</p>
 
-	    			<p>
-	    				<label>Senha:</label><br>
-	    				<input type="password" name="senha" value="<?php echo $senha; ?>">
-	    			</p>
+		    			<p>
+		    				<label>Senha:</label><br>
+		    				<input type="password" name="senha" value="<?php echo $senha; ?>" class="form-control">
+		    			</p>
 
-	    			<p>
-	    				<label>E-mail:</label><br>
-	    				<input type="email" name="email" value="<?php echo $email; ?>">
-	    			</p>
+		    			<p>
+		    				<label>E-mail:</label><br>
+		    				<input type="email" name="email" value="<?php echo $email; ?>" class="form-control">
+		    			</p>
 
-	    			<p>
-	    				<button name="edt_user" type="submit" class="btn btn-warning">Editar</button>
-	    			</p>
+		    			<p>
+		    				<button name="edt_user" type="submit" class="btn btn-primary">Editar</button>
+		    			</p>
 
-	    		</form>		
-
+		    		</form>		
+		    	</div>
 	  		</div>
 		</div>	
 	</div>
