@@ -1,7 +1,7 @@
 <?php 
 	if(empty($_POST['usuario']) || empty($_POST['senha']))
 	{
-		header('location:login.php');
+		header('location:login.php?msg=emptyFields');
 	}
 	else
 	{
@@ -30,7 +30,7 @@
 		}
 		else
 		{
-			header('location:login.php');
+			header('location:login.php?msg=loginError');
 		}
 	}
 ?>

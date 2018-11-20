@@ -1,5 +1,9 @@
 <?php 
 
+	include 'func.php';
+
+	validar_form_cad();
+
 	$usuario = $_POST['usuario'];
 	$senha   = $_POST['senha'];
 	$email   = $_POST['email'];
@@ -13,11 +17,11 @@
 
 	if(mysqli_affected_rows($conn) > 0)
 	{
-		echo 'Cadastrado com sucesso!';
+		header('location:login.php?msg=cadSuccess');
 	}
 	else
 	{
-		echo 'Erro ao cadastrar...';
+		header('location:cadastro.php?msg=cadError');
 	}
 
 ?>

@@ -7,7 +7,11 @@
 </head>
 <body class="container">
 
-	<?php include 'menu.php'; ?>
+	<?php 
+	include 'menu.php'; 
+	include 'func.php';
+	verificar_msg();
+	?>
 
 	<h3 class="text-primary">Entrar no Sistema</h3>
 
