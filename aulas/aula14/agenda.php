@@ -18,7 +18,7 @@
 	?>
 
 	<h3 class="text-primary">
-		Minha Agenda - 
+		Agenda de <b><?php echo $_SESSION['usuario'] ?></b> | 
 		<!-- Button trigger modal -->
 		<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#formModalCenter">
   			Novo Evento
@@ -76,11 +76,18 @@
 			echo '<tr>';
 			foreach ($linha_atual as $coluna_atual => $valor) 
 			{
-				echo '<td>'.$valor.'</td>';
+				
 				if($coluna_atual == 'id_evento')
 				{
 					$id_evento = $valor;
 				}
+				else if($coluna_atual == 'data')
+				{
+					$nova_data = strtotime($valor);
+					$valor = date("d/m/Y", $nova_data);
+				}
+
+				echo '<td>'.$valor.'</td>';
 			}
 
 			echo '<td class="text-center">
